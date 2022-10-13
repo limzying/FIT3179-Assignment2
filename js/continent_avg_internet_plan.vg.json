@@ -1,0 +1,64 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Average number of internet plans for each continent",
+    "width": 600,
+    "height": 500,
+    "background":"transparent",
+    "data": {
+        "url": "https://raw.githubusercontent.com/limzying/FIT3179-Assignment2/main/data/worldwide%20internet%20details%202022.csv"
+    },
+    "transform": [
+        {
+            "aggregate": [{
+                "op": "mean",
+                "field": "no_internet_plan",
+                "as": "avg_no_internet_plan"
+            }],
+            "groupby": ["continental_region"]
+        }
+    ],
+    "layer": [{
+        "mark":{"type":"arc","outerRadius":170}
+    }],
+    "encoding": {
+        "theta": {
+            "aggregate": "sum",
+            "field": "avg_no_internet_plan",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "continental_region",
+            "type": "nominal",
+            "legend":{"title":"Continent"},
+            "scale": {
+                "domain": [
+                    "Africa",
+                    "Asia",
+                    "Caribbean",
+                    "Central America",
+                    "Europe",
+                    "North America",
+                    "Oceania",
+                    "South America"
+                ],
+                "range": [
+                    "#8ac926",
+                    "#d90429",
+                    "#ffdf00",
+                    "#ff5400",
+                    "#03045e",
+                    "#7209b7",
+                    "#004b23",
+                    "#ffa700"
+                ]
+            }
+        },
+        "opacity":{
+            "value":0.7
+        },
+        "tooltip":[
+            {"field": "continental_region", "type": "nominal","title":"Continent"},
+            {"field": "avg_no_internet_plan", "type": "quantitative","title":"Average no. of internet plans","format":".2f"}
+        ]
+    }
+}
