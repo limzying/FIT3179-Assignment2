@@ -38,7 +38,7 @@
                     "lookup": "properties.NAME",
                     "from":{
                         "data":{
-                            "url":"https://raw.githubusercontent.com/limzying/FIT3179-Assignment2/main/data/worldwide%20internet%20details%202022.csv"
+                            "url":"https://raw.githubusercontent.com/limzying/FIT3179-Assignment2/main/worldwide%20internet%20details%202022.csv"
                         },
                         "key": "country_name",
                         "fields": ["internet_user","population"]
