@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(241, 244, 255);
+    background-color: rgb(216, 225, 254);
     margin: 0; 
 }
 
@@ -19,7 +19,7 @@ body {
 }
 
 .page {
-    width: 1150px;
+    width: 1050px;
     margin: auto;
     padding: 30px;
 }
