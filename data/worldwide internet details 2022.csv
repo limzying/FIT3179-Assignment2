@@ -1,4 +1,4 @@
-country_code,country_name,continental_region,population,internet_user,no_internet_plan ,avg_price_1GB,cheapest _1GB,most_expensive_1GB,avg_speed,rank
+country_code,country_name,continental_region,population,internet_user,no_internet_plan,avg_price_1GB,cheapest_1GB,most_expensive_1GB,avg_speed,rank
 CN,China,Asia,1427647786,1010740000,36,$0.52,$0.30,$1.21,83.43,1
 IN,India,Asia,1352642280,833710000,58,$0.68,$0.05,$2.73,13.67,2
 US,United States,North America,327096265,312320000,45,$3.33,$1.00,$30.00,61.12,3
