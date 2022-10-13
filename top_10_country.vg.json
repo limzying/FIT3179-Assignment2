@@ -1,0 +1,34 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Top 10 countries with most internet users",
+    "width": 600,
+    "height": 500,
+    "background":"transparent",
+    "data": {
+        "url": "https://raw.githubusercontent.com/limzying/FIT3179-Assignment2/main/data/worldwide%20internet%20details%202022.csv"
+    },
+    "transform": [
+        {
+            "filter": "datum.rank<=10"}
+        ],
+    "mark": "bar",
+    "encoding": {
+        "x": {
+            "field":"country_name",
+            "type": "nominal",
+            "title": "Country",
+            "sort": {"field": "internet_user", "op": "sum", "order":"descending"}
+        },
+        "y": {
+            "field": "internet_user",
+            "type": "quantitative",
+            "title": "Number of internet users"
+        },
+        "tooltip":[
+            {"field": "country_name", "type": "nominal","title":"Country"},
+            {"field": "internet_user", "type": "quantitative","title":"Number of internet users"},
+            {"field":"population","type":"nominal","title":"Population"}
+        ]
+    }
+  }
+  
