@@ -1,7 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "title":"Number of internet users around the world",
-    "width":800,
+    "width":600,
     "height":500,
     "background":"transparent",
     "projection":{"type":"equalEarth"},
