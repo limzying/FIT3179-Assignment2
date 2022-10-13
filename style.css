@@ -1,0 +1,38 @@
+body {
+    background-color: rgb(241, 244, 255);
+    margin: 0; 
+}
+
+.body_title img {
+	opacity: 0.85;
+}
+
+.body_title-text {
+    font-weight: 300;
+	font-family: 'Georgia', serif;
+	font-size: 55px;
+	line-height: 1;
+	position: absolute;
+	color: #ffffff;
+	top: 12%;
+	left: 22%;
+}
+
+.page {
+    width: 1150px;
+    margin: auto;
+    padding: 30px;
+}
+
+.pure-g {
+    margin-bottom: 50px;
+}
+
+.vis-container {
+    width: 100%;
+}
+
+p{
+    text-align: center;
+    font-size: small;
+}
