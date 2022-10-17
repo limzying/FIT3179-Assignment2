@@ -3,6 +3,7 @@
     "width": "container",
     "height": 500,
     "background":"transparent",
+    "title":"Average number of internet plans for each continents",
     "data": {
         "url": "https://raw.githubusercontent.com/limzying/FIT3179-Assignment2/main/worldwide%20internet%20details%202022.csv"
     },
