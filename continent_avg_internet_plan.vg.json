@@ -1,7 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": "Average number of internet plans for each continent",
-    "width": 500,
+    "width": "container",
     "height": 500,
     "background":"transparent",
     "data": {
@@ -17,14 +16,25 @@
             "groupby": ["continental_region"]
         }
     ],
-    "layer": [{
-        "mark":{"type":"arc","outerRadius":170}
-    }],
-    "encoding": {
+    "layer": [
+        {"mark":{"type":"arc","innerRadius":140,"outerRadius":230}},
+        {"mark":{
+            "type": "text",
+            "radius":255,
+            "fill":"black",
+            "fontSize":16
+        },
+        "encoding": {
+            "text":{"field":"avg_no_internet_plan","type": "quantitative","format":".2f"}
+        }
+    }
+    ],
+        "encoding": {
         "theta": {
             "aggregate": "sum",
             "field": "avg_no_internet_plan",
-            "type": "quantitative"
+            "type": "quantitative",
+            "stack":true
         },
         "color": {
             "field": "continental_region",
@@ -41,24 +51,20 @@
                     "Oceania",
                     "South America"
                 ],
-                "range": [
-                    "#8ac926",
-                    "#d90429",
-                    "#ffdf00",
-                    "#ff5400",
-                    "#03045e",
-                    "#7209b7",
-                    "#004b23",
-                    "#ffa700"
-                ]
+                "scheme":"set3"
             }
         },
-        "opacity":{
-            "value":0.7
-        },
+        
         "tooltip":[
             {"field": "continental_region", "type": "nominal","title":"Continent"},
             {"field": "avg_no_internet_plan", "type": "quantitative","title":"Average no. of internet plans","format":".2f"}
         ]
-    }
+    },
+    "config": {
+        "style": {
+            "cell": {
+                "stroke": "transparent"
+            }
+        }
+    } 
 }
