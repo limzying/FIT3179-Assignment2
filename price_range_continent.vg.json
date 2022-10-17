@@ -1,0 +1,102 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Internet price range for each continent",
+    "width":"container",
+    "height":500,
+    "background":"transparent",
+    "data": {
+        "url": "https://raw.githubusercontent.com/limzying/FIT3179-Assignment2/main/worldwide%20internet%20details%202022.csv"
+    },
+    "transform": [
+      {
+        "aggregate": [
+          {"op": "mean", "field": "cheapest_1GB", "as": "avg_cheap"},
+          {"op": "mean", "field": "most_expensive_1GB", "as": "avg_expensive"}        
+        ],
+        "groupby": ["continental_region"]
+      }
+    ],
+    "layer": [
+        {
+            "mark":{
+                "type": "rule",
+                "size":2.5
+            },
+            "encoding": {
+                "x": {
+                    "field": "avg_cheap",
+                    "type": "quantitative"
+                },
+                "x2":{
+                    "field":"avg_expensive"
+                }
+            }
+        },
+        {
+            "mark": {
+                "type": "point",
+                "filled": true,
+                "opacity":1
+            },
+            "encoding": {
+                "x": {
+                "field": "avg_cheap",
+                "type": "quantitative"
+                }
+            }
+        },
+        {
+            "mark": {
+                "type": "point",
+                "filled": true,
+                "opacity":1
+            },
+            "encoding": {
+                "x": {
+                "field": "avg_expensive",
+                "type": "quantitative"
+                }
+            }
+        }
+      ],
+      "encoding": {
+        "x": {
+            "axis": {
+                "grid": false
+            },
+            "title": "Internet price range($)"
+        },
+        "y": {
+            "field": "continental_region",
+            "title": "Continent",
+            "type": "nominal",
+            "axis": {
+            "grid": false,
+            "domain": false
+            }
+        },
+        "color": {
+            "field": "continental_region",
+            "type": "nominal",
+            "legend":{"title":"Continent"},
+            "scale": {
+                "domain": [
+                    "Africa",
+                    "Asia",
+                    "Caribbean",
+                    "Central America",
+                    "Europe",
+                    "North America",
+                    "Oceania",
+                    "South America"
+                ],
+                "scheme":"set3"
+            }
+        },
+        "tooltip":[
+            {"field": "continental_region", "type": "nominal","title":"Continent"},
+            {"field": "avg_cheap", "type": "quantitative","title":"Average cheapest price($)","format":".2f"},
+            {"field": "avg_expensive", "type": "quantitative","title":"Average most expensive price($)","format":".2f"}
+        ]
+    }
+  }
