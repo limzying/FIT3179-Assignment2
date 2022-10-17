@@ -1,31 +1,42 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": "Top 10 countries with most internet users",
-    "width": 600,
+    "width": "container",
     "height": 500,
     "background":"transparent",
     "data": {
         "url": "https://raw.githubusercontent.com/limzying/FIT3179-Assignment2/main/worldwide%20internet%20details%202022.csv"
     },
     "transform": [
-        {
-            "filter": "datum.rank<=10"}
-        ],
+        {"filter": "datum.rank<=10"},
+        {"calculate": "datum.internet_user/datum.population*100","as":"internet_user_rate"}
+    ],
     "mark": "bar",
     "encoding": {
         "x": {
+            "field": "internet_user",
+            "type": "quantitative",
+            "title": "Total internet users",
+            "axis":{"grid": false,"domain": false}
+        },
+        "y": {
             "field":"country_name",
             "type": "nominal",
             "title": "Country",
-            "sort": {"field": "internet_user", "op": "sum", "order":"descending"}
+            "sort": {"field": "internet_user", "op": "sum", "order":"descending"},
+            "axis":{"grid": false,"domain": false}
         },
-        "y": {
-            "field": "internet_user",
-            "type": "quantitative",
-            "title": "Number of internet users"
+        "color":{
+            "legend":{
+                "title":"Country"
+            },
+            "field":"country_name",
+            "scale":{
+                "scheme":"set3"
+            }
         },
         "tooltip":[
             {"field": "country_name", "type": "nominal","title":"Country"},
+            {"field": "internet_user_rate", "type": "quantitative","title":"Internet user rate(%)", "format":".2f"},
             {"field": "internet_user", "type": "quantitative","title":"Number of internet users"},
             {"field":"population","type":"nominal","title":"Population"}
         ]
