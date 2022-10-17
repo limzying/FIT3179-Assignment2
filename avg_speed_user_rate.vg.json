@@ -127,7 +127,7 @@
                 "color":{"value":"black"},
                 "opacity":{
                     "condition":{
-                        "test": "datum['country_name'] == 'Maldives' || datum['country_name'] == 'China' || datum['country_name'] =='South Korea' || datum['country_name'] == 'Iran' || datum['country_name'] =='New Zealand' || datum['country_name'] == 'Palestine' || datum['country_name'] =='Togo' || datum['country_name'] == 'United States' || datum['country_name'] == 'Singapore'",
+                        "test": "datum['country_name'] == 'Maldives' || datum['country_name'] == 'China' || datum['country_name'] =='South Korea' || datum['country_name'] == 'Iran' || datum['country_name'] =='United Kingdom' || datum['country_name'] == 'Palestine' || datum['country_name'] =='Togo' || datum['country_name'] == 'United States' || datum['country_name'] == 'Singapore'",
                         "value": 1
                     },
                      "value": 0
