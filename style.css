@@ -1,35 +1,47 @@
 body {
-    background-color: rgb(216, 225, 254);
-    margin: 0; 
+    background-color: rgb(245, 234, 250);
 }
 
 .body_title img {
-	opacity: 0.85;
+	opacity: 0.95;
 }
 
 .body_title-text {
-    font-weight: 300;
-	font-family: 'Georgia', serif;
-	font-size: 55px;
-	line-height: 1;
+    font-family: 'PT Serif';
+	font-size: 65px;
 	position: absolute;
 	color: #ffffff;
-	top: 12%;
-	left: 22%;
+	top: 17%;
+	left: 16%;
 }
 
+
 .page {
-    width: 1050px;
+    width: 1150px;
     margin: auto;
     padding: 30px;
 }
 
 .pure-g {
-    margin-bottom: 50px;
+    margin-top: 40px;
+    margin-bottom: 80px;
 }
 
 .vis-container {
     width: 100%;
+}
+
+.description-right{
+    padding-left: 20px;
+    text-align: justify;
+}
+
+h2{
+    font-family: 'PT Serif';
+}
+
+p{
+    font-size: 18px;
 }
 
 h5{
