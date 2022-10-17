@@ -48,3 +48,97 @@ h5{
     text-align: center;
     font-size: small;
 }
+
+.bold{
+    font-weight: bold;
+}
+
+.figure{
+    font-weight: bold;
+    font-size:x-large;
+    color: rgb(146, 0, 250);
+}
+
+.china{
+    font-weight: bold;
+    font-size: x-large;
+    color: #bebada;
+}
+
+.india{
+    font-weight: bold;
+    font-size: x-large;
+    color: #fb8072;
+}
+
+.us{
+    font-weight: bold;
+    font-size: x-large;
+    color: #bc80bd;
+}
+
+.indonesia{
+    font-weight: bold;
+    font-size: x-large;
+    color: #80b1d3;
+}
+
+.brazil{
+    font-weight: bold;
+    font-size: x-large;
+    color: #ffffb3;
+}
+
+.nigeria{
+    font-weight: bold;
+    font-size: x-large;
+    color: #b3de69;
+}
+
+.bangladesh{
+    font-weight: bold;
+    font-size: x-large;
+    color: #8dd3c7;
+}
+
+.russia{
+    font-weight: bold;
+    font-size: x-large;
+    color: #d9d9d9;
+}
+
+.pakistan{
+    font-weight: bold;
+    font-size: x-large;
+    color: #fccde5;
+}
+
+.japan{
+    font-weight: bold;
+    font-size: x-large;
+    color: #fdb462;
+}
+
+.na{
+    font-weight: bold;
+    font-size: x-large;
+    color: #fdb462;
+}
+
+.ca{
+    font-weight: bold;
+    font-size: x-large;
+    color: #bebada;
+}
+
+.eu{
+    font-weight: bold;
+    font-size: x-large;
+    color: #80b1d3;
+}
+
+.sa{
+    font-weight: bold;
+    font-size: x-large;
+    color: #fccde5;
+}
