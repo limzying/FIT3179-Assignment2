@@ -1,7 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title":"Number of internet users around the world",
-    "width":600,
+    "width":"container",
     "height":500,
     "background":"transparent",
     "projection":{"type":"equalEarth"},
@@ -19,7 +18,7 @@
                 "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/7_others/oceans.topojson",
                 "format":{"type":"topojson","feature":"oceans"}
                 },
-                "mark":{"type":"geoshape","fill":"lightblue"}
+                "mark":{"type":"geoshape","fill":"honeydew"}
         },
         {
             "data":{
@@ -27,6 +26,19 @@
                 "format":{"type":"topojson","feature":"ne_110m_graticules_30"}
                 },
                 "mark":{"type":"geoshape","fill":null,"stroke":"darkgray"}
+        },
+        {
+            "data":{
+                "url": "https://raw.githubusercontent.com/limzying/FIT3179-Homework-Week9/main/ne_110m_admin_0_countries.json",
+                "format":{"type":"topojson","feature":"ne_110m_admin_0_countries"}
+            },
+            "transform": [
+                {"calculate": "'Data is not available in ' + datum.properties.NAME","as":"notice"}
+            ],
+            "mark":{"type": "geoshape","fill":"lightslategrey","stroke":"darky","strokeWidth":0.3},
+            "encoding":{
+                "tooltip":{"field":"notice"}
+            }
         },
         {
             "data":{
@@ -45,26 +57,78 @@
                     }
                 },
                 {
-                    "calculate": "datum.internet_user/datum.population*100","as":"Internet users per 100 population"
+                    "calculate": "datum.internet_user/datum.population*100","as":"Internet user rate"
                 }
             ],
-            "mark":{"type":"geoshape","stroke":"lightgray","strokeWidth":0.5},
+            "mark":{"type":"geoshape","stroke":"black","strokeWidth":0.1},
             "encoding": {
                 "color":{
-                    "field":"Internet users per 100 population",
+                    "field":"Internet user rate",
                     "type":"quantitative",
                     "scale":{
                         "type":"threshold",
                         "domain":[20,40,60,80],
-                        "range":["#63C5DA","52B2BF","#0492C2","#1520A6","#241571"]
-                    }
+                        "scheme":"lighttealblue"
+                    },
+                    "legend":{"title":"Internet user rate(%)"}
                 },
                 "tooltip":[
                     {"field":"properties.NAME","type": "nominal","title":"Country"},
-                    {"field":"Internet users per 100 population","type":"quantitative","format":".2f"}
+                    {"field":"Internet user rate","type":"quantitative","format":".2f"}
                 ]
             }
+        },
+        {
+            "data": {
+                "values": [
+                    {"country_name": "Australia"}
+                ]
+            },
+            "mark": {
+                "type": "text",
+                "dx": 280,
+                "dy": 60
+            },
+            "encoding": {
+                "text": {"field": "country_name"}
+            }
+        },
+        {
+            "data": {
+                "values": [
+                    {"country_name": "United States"}
+                ]
+            },
+            "mark": {
+                "type": "text",
+                "dx": -140,
+                "dy": -120
+            },
+            "encoding": {
+                "text": {"field": "country_name"}
+            }
+        },
+        {
+            "data": {
+                "values": [
+                    {"country_name": "South Africa"}
+                ]
+            },
+            "mark": {
+                "type": "text",
+                "dx": 50,
+                "dy": 130
+            },
+            "encoding": {
+                "text": {"field": "country_name"}
+            }
         }
-    ]
-    
+    ],
+    "config": {
+        "style": {
+            "cell": {
+                "stroke": "transparent"
+            }
+        }
+    } 
 }
